@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Memory
-from rest_framework.generics import DestroyAPIView, UpdateAPIView, CreateAPIView, ListAPIView, GenericAPIView, ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import DestroyAPIView, UpdateAPIView, CreateAPIView,  ListAPIView, GenericAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework import mixins
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -19,6 +19,7 @@ class DetailMemory(RetrieveAPIView):
     queryset = Memory.objects.all()
 
 class EditMemory(UpdateAPIView):
+    permission_classes = [AllowAny]
     serializer_class = MemorySerializer
     queryset = Memory.objects.all()
 

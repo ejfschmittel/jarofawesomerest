@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faImage } from '@fortawesome/free-solid-svg-icons'
+
 
 import {useSelector, useDispatch} from "react-redux"
 
-import {getMemory} from "../redux/memories/actions"
+import {getMemory, editMemory} from "../redux/memories/actions"
 
 import DeleteMemoryButton from "../components/DeleteMemoryButton.component"
 import ImageInput from "../components/ImageInput.component"
@@ -25,15 +24,14 @@ const EditMemoryPage = ({match}) => {
 
     const [formData, setFormData] = useState({
         title: "", 
-        image: null,
         date: "",
         tags: "",
+        feature_image: null,
         content: "",
         viewing_permissions: ""
     })
     
-    const [expanded, setExpanded] = useState(false)
-
+   
 
 
 
@@ -43,18 +41,36 @@ const EditMemoryPage = ({match}) => {
     }, [])
 
     useEffect(() => {
-        // load memory
         setFormData({...formData, ...memory})
      }, [memory])
 
-    const onAddImage = (e) => {
-        setExpanded(true)
-    }
+
 
     const onChange = (e) => {
         const {name, value} = e.target
         setFormData({...formData, [name]: value})
     }
+
+    const onImageChange = (e) => {
+        const image = e.target.files[0]
+        setFormData({...formData, feature_image: image})
+    }
+
+    
+    const onEdit = (e) => {
+        e.preventDefault();
+        const {id, title, date, tags, feature_image, content, viewing_permissions} = formData
+
+        let data = {id,title,date,tags, content, viewing_permissions}
+
+        if(feature_image && typeof feature_image != "string" ){
+            console.log("update feature image")
+            data = {...data, feature_image}
+        }
+        console.log(data)
+        dispatch(editMemory(data))
+    }
+
 
     return (
         <div className="container container--800">
@@ -77,16 +93,16 @@ const EditMemoryPage = ({match}) => {
                         </select>
                     </div>
 
-                    <button className="button button--full button--success">Update Memory</button>
+                    <button className="button button--full button--success" onClick={onEdit}>Update Memory</button>
                 </div>
                 <div>
-                    <ImageInput />
+                    <ImageInput onChange={onImageChange} initialImage={ memory && memory.feature_image}/>
                     <input type="text" placeholder="tags" />
                  
                     <textarea placeholder="Notes">
 
                     </textarea>
-                    <button className="button button--full button--success">Update Memory</button>
+                    <button className="button button--full button--success" onClick={onEdit}>Update Memory</button>
                 </div>
             </form>
         </div>

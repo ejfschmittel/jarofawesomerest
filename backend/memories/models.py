@@ -21,7 +21,7 @@ class Memory(models.Model):
 
     title = models.CharField(max_length=128)
     content = models.TextField(null=True, blank=True)
-    feature_image = models.ImageField(null=True, blank=True, upload_to=None)
+    feature_image = models.ImageField(null=True, blank=True, upload_to="images")
     viewing_permissions = models.CharField(max_length=2, choices=VIEWING_PERMISSION_CHOICES, default="PR")
 
 

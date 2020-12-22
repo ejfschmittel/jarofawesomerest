@@ -4,9 +4,16 @@ import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 import "../styles/components/image-input.scss"
 
-const ImageInput = ({value, onChange}) => {
+const ImageInput = ({value, onChange, initialImage}) => {
     const [previewImage, setPreviewImage] = useState(null)
 
+
+    useEffect(() => {
+        console.log(initialImage)
+        if(initialImage){
+           setPreviewImage(initialImage)
+        }
+    }, [initialImage])
 
     const loadPreviewImage = (image) => {
         if(image){
