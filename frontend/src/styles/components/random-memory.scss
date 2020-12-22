@@ -1,0 +1,45 @@
+.random-memory{
+
+    background: #333;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title{
+        color: #fff;
+        text-align: center;
+        font-size: 2.2rem;
+   
+    }
+
+    &__img-container{
+        flex: 1;
+       background: red;
+       background-size: cover;
+       background-position: center;
+    }
+}
+
+
+.random-memory-slider{
+
+}
+
+.random-memory-container{
+    background: #f00;
+    margin: 3rem auto;
+    max-width: 800px;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.5);
+
+}
+
+.random-memory-button{
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    background: #2178a3;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}

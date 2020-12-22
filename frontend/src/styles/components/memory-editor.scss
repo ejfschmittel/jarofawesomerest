@@ -1,0 +1,162 @@
+.memory-editor{
+    margin-top: 2rem;
+    input{
+        width: 100%;
+        padding: 1.3rem;
+        font-size: 1.3rem;
+        margin: 1rem 0;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.15);
+        outline: none;
+        border: none;
+    }
+
+   /* button{
+        width: 100%;
+        padding: 1.3rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border: none;
+        background: green;
+        color: #fff;
+        cursor: pointer;
+
+        margin: 1rem 0;
+        display: block;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+        outline: none;
+        border: none;
+      
+     
+    }*/
+
+    select{
+        padding: 1.3rem;
+        font-size: 1.3rem;
+        width: 100%;
+        margin: 1rem 0;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+        outline: none;
+        border: none;
+    }
+
+    textarea{
+        width: 100%;
+        min-height: 10rem;
+        resize: vertical;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+        outline: none;
+        border: none;
+        padding: 1.3rem;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+
+    &__header{
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 3rem;
+    }
+
+    &__headline{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__row{
+        display: flex;
+
+        & > *:not(:first-child){
+            margin-left: 1rem;
+        }
+
+        & > * {
+            flex: 2;
+        }
+
+        select{
+            flex: 1;
+        }
+    }
+}
+
+.button{
+    border: none;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: .5rem 1.3rem;
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+
+    &:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    & > * {
+        margin: 0 .5rem;
+    }
+
+
+    &--full{
+        width: 100%;
+        padding: 1.3rem;
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin: 1rem 0;
+        display: block;
+    }
+
+    &--success{
+        background: green;
+        color: #fff;
+    }
+
+    &--danger{
+        background: red;
+        color: #fff;
+    }
+
+    &--misc{
+        // blue color
+    }
+  
+}
+
+
+.image-input{
+    background: #2178a3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    color: #fff;
+    height: 4.8rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    margin: 0 0rem;
+    margin-bottom: 2rem;
+    
+
+    transition: all .5s;
+
+    input{
+        display: none;
+    }
+
+    &--filled{
+        height: 30rem;
+    }
+
+    &__center{
+        display: flex;
+        align-items: center;
+
+        svg{
+            margin-left: 1rem;
+        }
+    }
+}

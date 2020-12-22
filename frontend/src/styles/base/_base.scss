@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; 
+
+    @include respond(tab-land){
+        font-size: 56.25%; //1rem = 8px, 9/16 = 50%
+    }
+
+    @include respond(tab-port){
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%; //1rem = 8px, 9/16 = 50%
+    }
+}
+
+
+body{  
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    background: #eee;
+}
+
+#root{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-body-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    &--800{
+        max-width: 800px;
+    }
+
+}

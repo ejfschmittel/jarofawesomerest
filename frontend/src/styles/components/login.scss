@@ -1,0 +1,116 @@
+.form1{
+ 
+    width: 100%;
+    max-width: 40rem;
+
+    animation: animate-in 1s forwards;
+  
+    &::after{
+        content: "";
+        height:6rem;
+        display: block;
+    }
+}
+
+.form1-header{
+    &__title{
+        background: #333;
+        color: #fff;
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+    }
+
+    &__notification{
+        background: #fff;
+        padding: 1rem 2rem;
+        text-align: center;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #666;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.15);
+        border-radius: .5rem;
+    }
+
+    &__notifiction-link{
+        color: green;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+.form1-input{
+    margin: 2rem 0;
+    position: relative;
+    margin-top: 3rem;
+
+    input{
+        padding: 1.4rem 2rem;
+        font-size: 1.4rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: #fff;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.15);
+        
+    }
+
+    label{
+        position: absolute;
+        top: 50%;
+        left: 2rem;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        transition: all .2s;
+        cursor: text;
+    }
+
+    input:focus + label{
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        background: orange;
+        padding: .1rem .5rem;
+        color: #fff;
+    }
+
+    input:valid + label{
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        background: orange;
+        padding: .1rem .5rem;
+        color: #fff;
+    }
+}
+
+.form1-button{
+    width: 100%;
+    color: #fff;
+    background: green;
+    font-size: 2rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+    margin-top: 2rem;
+
+    &:disabled{
+        cursor: not-allowed;
+        opacity: .8;
+        filter: grayscale(0.8) ;
+    }
+}
+
+
+@keyframes animate-in{
+    0%{
+        transform: translateY(6rem);
+    }
+    100%{
+        transform: translateY(0rem);
+    }
+}
