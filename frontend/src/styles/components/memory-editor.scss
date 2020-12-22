@@ -126,37 +126,3 @@
 }
 
 
-.image-input{
-    background: #2178a3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.4rem 3rem;
-    color: #fff;
-    height: 4.8rem;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border-radius: 1rem;
-    margin: 0 0rem;
-    margin-bottom: 2rem;
-    
-
-    transition: all .5s;
-
-    input{
-        display: none;
-    }
-
-    &--filled{
-        height: 30rem;
-    }
-
-    &__center{
-        display: flex;
-        align-items: center;
-
-        svg{
-            margin-left: 1rem;
-        }
-    }
-}

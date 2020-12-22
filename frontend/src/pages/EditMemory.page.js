@@ -8,6 +8,7 @@ import {useSelector, useDispatch} from "react-redux"
 import {getMemory} from "../redux/memories/actions"
 
 import DeleteMemoryButton from "../components/DeleteMemoryButton.component"
+import ImageInput from "../components/ImageInput.component"
 
 // private: only you
 // only: friends
@@ -79,15 +80,7 @@ const EditMemoryPage = ({match}) => {
                     <button className="button button--full button--success">Update Memory</button>
                 </div>
                 <div>
-                    <label className={`image-input ${expanded && "image-input--filled"}`}>
-                        <input type="file" onChange={onAddImage} />
-
-                        <div className="image-input__center">
-                            Add Feature Image
-                            <FontAwesomeIcon icon={faImage} size="2x" />
-                        </div>
-                        
-                    </label>
+                    <ImageInput />
                     <input type="text" placeholder="tags" />
                  
                     <textarea placeholder="Notes">
