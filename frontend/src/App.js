@@ -10,6 +10,7 @@ import LoginPage from "./pages/Login.page"
 import SignupPage from "./pages/Signup.page"
 import EditMemoryPage from "./pages/EditMemory.page"
 import UserMemoriesPage from "./pages/UserMemories.page"
+import MemoryDetailPage from "./pages/MemoryDetail.page"
 
 import "./styles/main.scss";
 
@@ -24,7 +25,9 @@ function App() {
         <Route path="/signup" component={SignupPage} />
         {/*<Route path="/memories/:id/" component={MemoryDetailPage} /> memory detail */}
         <Route path="/memories/:id/edit" component={EditMemoryPage} />
+        <Route path="/memories/:id" component={MemoryDetailPage} />
         <Route path="/users/:uuid/memories/" component={UserMemoriesPage} /> 
+        
         {/*<Route path="/memories/" component={DiscoverMemoriesPage} /> discover memory */}
         {/*<Route path="/memories/" component={DiscoverMemoriesPage} /> discover memory */}
         <Route path="/" component={HomePage} />

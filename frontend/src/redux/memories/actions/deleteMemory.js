@@ -2,6 +2,7 @@ import CONST, {URLS} from "../memories.constants"
 import {getAuthToken} from "../../../utils/jwt"
 
 
+
 const deleteMemory = memoryId => async dispatch => {
 
 
